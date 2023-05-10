@@ -38,7 +38,7 @@ public class MyUserController {
     @PutMapping("/update/{id}")
     public ResponseEntity<API> updateUser(@PathVariable String id,
                                               @RequestBody Map<String,Object> updates,
-                                             Errors errors) throws Exception {
+                                             Errors errors) {
         if (errors.hasErrors()){
             return ResponseEntity.status(401).body(new API(errors.getFieldError().getDefaultMessage(),401));
         }
